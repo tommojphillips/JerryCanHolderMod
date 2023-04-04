@@ -1,27 +1,29 @@
-﻿using System.Reflection;
+﻿// VERSION 1.1
+
+
+using System.Reflection;
 using System.Resources;
 
 // General Information
-[assembly: AssemblyTitle("Jerry Can Holder Mod")]
+[assembly: AssemblyTitle("JerryCanHolderMod")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Tommo J. Productions")]
-[assembly: AssemblyProduct("Jerry Can Holder Mod")]
-[assembly: AssemblyCopyright("Tommo J. Productions Copyright © 2022")]
-[assembly: AssemblyTrademark("Azine")]
+[assembly: AssemblyProduct("JerryCanHolderMod")]
+[assembly: AssemblyCopyright("Tommo J. Productions Copyright © 2023")]
 [assembly: NeutralResourcesLanguage("en-AU")]
 
 // Version information
-[assembly: AssemblyVersion("1.0.162.2")]
-[assembly: AssemblyFileVersion("1.0.162.2")]
+[assembly: AssemblyVersion("1.0.2.4")]
+[assembly: AssemblyFileVersion("1.0.2.4")]
 
 namespace TommoJProductions.JerryCanHolderMod
 {
 
     public class VersionInfo
     {
-	    public const string lastestRelease = "12.06.2022 01:40 PM";
-	    public const string version = "1.0.162.2";
+	    public const string lastestRelease = "16.04.2023 08:42 PM";
+	    public const string version = "1.0.2.4";
 
         /// <summary>
         /// Represents if the mod has been complied for x64
