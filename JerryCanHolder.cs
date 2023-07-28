@@ -3,30 +3,21 @@ using HutongGames.PlayMaker.Actions;
 using MSCLoader;
 using System;
 using System.IO;
+
 using TommoJProductions.ModApi;
-using TommoJProductions.ModApi.Database;
 using TommoJProductions.ModApi.Attachable;
-using TommoJProductions.ModApi.Attachable.CallBacks;
+using TommoJProductions.ModApi.Database;
+
+using static TommoJProductions.ModApi.ModClient;
+
 using UnityEngine;
 using GUI = UnityEngine.GUILayout;
+
 namespace TommoJProductions.JerryCanHolderMod
 {
     public class JerryCanHolder : Mod
     {
         // Project start date, 12.06.2022
-
-        #region classes
-
-        public class JerryCanHolderSaveData
-        {
-            // Written, 12.06.2022
-
-            public PartSaveInfo holderPart = new PartSaveInfo() { position = new Vector3(-9.7f, 0, 6.2f) };
-            public PartSaveInfo dieselJerry = new PartSaveInfo();
-            public PartSaveInfo gasJerry = new PartSaveInfo();
-        }
-
-        #endregion
 
         #region Mod Properties
 
@@ -34,10 +25,13 @@ namespace TommoJProductions.JerryCanHolderMod
         public override string Name => "Jerry Holder"; //You mod name
         public override string Author => "tommojphillips"; //Your Username
         public override string Version => VersionInfo.version; //Version
-        public override string Description => $"Adds a jerry can holder part to the game. attaches to satsuma. Latest Release: {VersionInfo.lastestRelease}\nComplied With: ModApi v{ModApi.VersionInfo.version}."; //Short description of your mod
+        public override string Description => DESCRIPTION; //Short description of your mod
         public override bool UseAssetsFolder => true;
 
         #endregion
+
+        public static readonly string DESCRIPTION = "Adds a jerry can holder part to the game. attaches to satsuma.\n Latest Release: " + VersionInfo.lastestRelease +
+            "\nComplied With: ModApi v" + ModApi.VersionInfo.version + " BUILD " + ModApi.VersionInfo.build + ".";
 
         #region Fields
 
@@ -208,13 +202,13 @@ namespace TommoJProductions.JerryCanHolderMod
             string path = Path.Combine(ModLoader.GetModAssetsFolder(this), assetBundleFileName);
             if (File.Exists(path))
             {
-                ModConsole.Print($"{Name} asset bundle found");
+                ModClient.print($"{Name} asset bundle found");
                 AssetBundle ab = LoadAssets.LoadBundle(this, assetBundleFileName);
                 jerryCanHolderPrefab = ab.LoadAsset($"{ID}.prefab") as GameObject;
                 ab.Unload(false);
                 return true;
             }
-            ModConsole.Error($"[{ID}] - please install the mod correctly... file: '{path}' doesn't exist");
+            ModConsole.Error($"[{ID}] Mod not installed correctly... file: '{path}' doesn't exist");
             return false;
         }
 

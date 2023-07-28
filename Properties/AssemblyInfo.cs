@@ -1,6 +1,4 @@
-﻿// VERSION 1.1
-
-
+﻿// VERSION 1.3
 using System.Reflection;
 using System.Resources;
 
@@ -14,16 +12,25 @@ using System.Resources;
 [assembly: NeutralResourcesLanguage("en-AU")]
 
 // Version information
-[assembly: AssemblyVersion("1.0.2.4")]
-[assembly: AssemblyFileVersion("1.0.2.4")]
+[assembly: AssemblyVersion("1.1.3.80")]
+[assembly: AssemblyFileVersion("1.1.3.80")]
 
 namespace TommoJProductions.JerryCanHolderMod
 {
-
+    
+    /// <summary>
+    /// Represents the version info for JerryCanHolderMod
+    /// </summary>
     public class VersionInfo
     {
-	    public const string lastestRelease = "16.04.2023 08:42 PM";
-	    public const string version = "1.0.2.4";
+        /// <summary>
+        /// Represents latest release version date. Format: dd:MM:yyyy hh:mm tt
+        /// </summary>
+	    public const string lastestRelease = "28.07.2023 06:50 PM";
+        /// <summary>
+        /// Represents current version.
+        /// </summary>
+	    public const string version = "1.1.3.80";
 
         /// <summary>
         /// Represents if the mod has been complied for x64
